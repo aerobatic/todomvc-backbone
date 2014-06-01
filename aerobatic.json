@@ -1,0 +1,26 @@
+{
+  "shim": {
+    "underscore": {
+      "exports": "_"
+    },
+    "backbone": {
+      "deps": ["underscore", "jquery"],
+      "exports": "Backbone"
+    },
+    "backboneLocalstorage": {
+      "deps": ["backbone"],
+      "exports": "Store"
+    },
+    "hogan": {
+      "exports": "Hogan"
+    }
+  },
+  "paths": {
+    "jquery": ["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min"],
+		"underscore": ["//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min"],
+		"backbone": ["//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min"],
+    "backboneLocalstorage": ["//cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.7/backbone.localStorage-min"],
+    "hogan": ["//cdnjs.cloudflare.com/ajax/libs/hogan.js/3.0.0/hogan"]
+  },
+  "mainModule": "js/main"
+}
