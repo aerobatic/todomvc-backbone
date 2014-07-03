@@ -1,2 +1,4 @@
 node_modules
 .aerobatic
+bower_components
+dist

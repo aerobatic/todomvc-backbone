@@ -1,12 +1,11 @@
-/*global define*/
-define([
-	'jquery',
-	'backbone',
-	'asset!js/collections/todos',
-	'asset!js/common'
-], function ($, Backbone, Todos, Common) {
+/*global Backbone */
+var app = app || {};
+
+(function () {
 	'use strict';
 
+	// Todo Router
+	// ----------
 	var TodoRouter = Backbone.Router.extend({
 		routes: {
 			'*filter': 'setFilter'
@@ -14,13 +13,14 @@ define([
 
 		setFilter: function (param) {
 			// Set the current filter to be used
-			Common.TodoFilter = param || '';
+			app.TodoFilter = param || '';
 
 			// Trigger a collection filter event, causing hiding/unhiding
-			// of the Todo view items
-			Todos.trigger('filter');
+			// of Todo view items
+			app.todos.trigger('filter');
 		}
 	});
 
-	return TodoRouter;
-});
+	app.TodoRouter = new TodoRouter();
+	Backbone.history.start();
+})();
